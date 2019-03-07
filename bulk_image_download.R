@@ -35,12 +35,11 @@ sum(is.na(as.factor(occur_all$folder)))
 
 # You could also just sort images by the exact scientific names, rather than making custom folder assignments 
 # I didn't do this because I wanted synonyms, vars etc. to be put in the same species-level folder
-# But if you wanted to, you could modify later steps to put the files in folders based on values in the scientificName or genus instead of the above section.
-# If you do this, you could create the directories with this:
+# But if you wanted to, you could modify later steps to put the files in folders based on values in the scientificName or genus instead of the above section
+# If you do this, you could create the directories with the following (I'm pretty sure this will give a warning and not overwrite an existing folder)
 # for (i in 1: length(unique(occur_all$scientificName))) {
 #   dir.create(path = paste0("processed_images/", unique(occur_all$scientificName)[i]))
 # }
-# I'm pretty sure this will not overwrite an existing folder, but be careful.
 
 # Repeat the file reading and combining process for the image lists
 image_list = list.files(path = "cch2_records", pattern = "*images.csv", recursive = TRUE, full.names = TRUE); image_list
